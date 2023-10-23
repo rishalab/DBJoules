@@ -1,1 +1,0 @@
-{"project_name": "Default project name", "file_name": "emission.csv", "measure_period": 10, "pue": 1, "experiment_description": "default experiment description"}

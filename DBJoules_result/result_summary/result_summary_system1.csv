@@ -1,0 +1,5 @@
+tag,time,package0,package1,dram0,dram1,Total
+test_bagging_classification,5.2,85.9,0,41.9,0,127.8
+test_svm_classification,4.9,84.1,0,40.7,0,124.8
+test_decision_tree_classification,0.05,0.8,0,0.4,0,1.2
+test_ada_boost_classification,8.3,143.8,,69.3,0,213.1

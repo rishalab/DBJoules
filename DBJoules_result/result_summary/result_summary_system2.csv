@@ -1,0 +1,5 @@
+tag,time,package0,package1,dram0,dram1,Joules_sum(J)
+test_bagging_classification,3.5,133.4,0,113.8,0,247.2
+test_svm_classification,3.2,124.6,0,104.3,0,228.9
+test_decision_tree_classification,0.04,1.5,0,0,1.2,2.7
+test_ada_boost_classification,5.2,201.2,0,172.2,0,373.4
