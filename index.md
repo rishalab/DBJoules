@@ -1,4 +1,4 @@
-### RJoules - An Energy Measurement Tool for R Language
+### DBJoules: An Energy Measurement Tool for Database Management Systems
 
 <!-- You can use the [editor on GitHub](https://github.com/tritims/eTagger/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
@@ -39,4 +39,4 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
  
  ## Tool Description
  
-RJoules measures the energy consumption of R code snippeton Intel processor and provides domain-level granular results. This tool can be serves as a valuable resource for developers and practitioners seeking to develop energy-aware applications using the R languaguage,
+DBJoules, a tool designed to measure the energy consumption of database queries across four databases, i.e., MySQL, PostgreSQL, MongoDB, and Couchbase. This tool measures the energy consumption of queries by gathering the information about CPU and RAM usage, by utilizing psutil package.                                

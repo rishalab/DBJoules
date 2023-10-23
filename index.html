@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RJoules: An Energy Measurement Tool for R</title>
+    <title>DBJoules: An Energy Measurement Tool for Database Management Systems</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,7 @@
                     <h1 class="logo">
                         <a href="index.html">
 <!--                             <span aria-hidden="true" class="icon_documents_alt icon"></span> -->
-                            <span class="text-highlight"></span><span class="text-bold">RJoules</span>
+                            <span class="text-highlight"></span><span class="text-bold">DBJoules</span>
                         </a>
                     </h1>
                     
@@ -48,290 +48,187 @@
 			        </form>
                 </div> -->
                 
-            </div><!--//container-->
-        </header><!--//header-->
-        <div class="doc-wrapper">
-            <div class="container">
-                <!-- <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Last updated: Nov 21st, 2020</div>
-                </div>//doc-header -->
-                <div class="doc-body row">
-                    <div class="doc-content col-md-9 col-12 order-1">
-                        <div class="content-inner">
-                            <section id="download-section" class="doc-section">
-                                <h1 class="section-title">RJoules - An Energy Measurement Tool for R</h1>
-                                <br>
-                                <h3 class="block-title">Tool Description</h3>
-                                <div class="section-block">
-                                    <p>
-                                    RJoules, a tool designed to measure the energy consumption of code snippets written in R. It is a wrapper interface developed on top of Intel
-					    RAPL, enabling the logging of energy traces directly from the operating system
-                                    </p>
-<!--                                     <p style="color: red;">
-                                        <u>Note</u>: The current version of eTagger may have issues on runnning on some architectures of Mac systems.  
-                                    </p> -->
-<!--                                     <a href="https://github.com/rishalab/eTagger/archive/main.zip" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download Tool Zip</a> -->
-                                </div>
-                            </section><!--//doc-section-->
-                            <section id="installation-section" class="doc-section">
-                                <h2 class="section-title">Installation</h2>
-                                <div id="step1"  class="section-block">
-                                    <h3 class="block-title" id="requirements">Requirements</h3>
-                                    <div class="code-block">
-                                        <p>
-					    <ul>
-					   <li>Intel processors from the Celeron, Pentium, Core i3, i7, i9, and Xeon series, featuring the Sandy Bridge or newer architecture.</li>
-					    <li>Linux distribution Debian based operating system. We have tested on Ubuntu 20.04 and 22.04 Versions(recommended).</li>
-					    <li>Have <a href="https://cran.r-project.org">R</a> installed in your system.</li>
-					   </ul>
-					</p>
-				    
-				    <b>If you are using Ubuntu 22.04 please run the below commands to install R.</b>
-				    <ul>
-					    <li>wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/r-project.gpg</li>
-
-					    <li>echo "deb [signed-by=/usr/share/keyrings/r-project.gpg] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | sudo tee -a /etc/apt/sources.list.d/r-project.list</li>
-					    <li>sudo apt update</li>
-					    <li>sudo apt install --no-install-recommends r-base</li>
-					    <li>sudo -i R</li>
-					   </ul>
-					    
-                                    </div>
-                                    <h3 class="block-title" id="from-github">From Github</h3>
-                                    <div class="code-block">
+                </div><!--//container-->
+                    </header><!--//header-->
+                        <div class="doc-wrapper">
+                            <div class="container">
+                                <!-- <div id="doc-header" class="doc-header text-center">
+                                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
+                                    <div class="meta"><i class="far fa-clock"></i> Last updated: Nov 21st, 2020</div>
+                                </div>//doc-header -->
+                                <div class="doc-body row">
+                                    <div class="doc-content col-md-9 col-12 order-1">
+                                        <div class="content-inner">
+                                            <section id="download-section" class="doc-section">
+                                                <h1 class="section-title">DBJoules: An Energy Measurement Tool for Database Management Systems</h1>
+                                                <br>
+                                                <h3 class="block-title">Tool Description</h3>
+                                                <div class="section-block">
+                                                    <p>
+                                                        DBJoules, a tool designed to measure the energy consumption of database queries across four databases, i.e., MySQL, PostgreSQL, MongoDB, and Couchbase. 
+                                                        This tool measures the energy consumption of queries by gathering the information about CPU and RAM usage, by utilizing psutil package.
+                <!--                                     <p style="color: red;">
+                                                        <u>Note</u>: The current version of eTagger may have issues on runnning on some architectures of Mac systems.  
+                                                    </p> -->
+                <!--                                     <a href="https://github.com/rishalab/eTagger/archive/main.zip" class="btn btn-green" target="_blank"><i class="fas fa-download"></i> Download Tool Zip</a> -->
+                                                </div>
+                                            </section><!--//doc-section-->
+                                            <section id="installation-section" class="doc-section">
+                                                <h2 class="section-title">Installation</h2>
+                                                <div id="step1"  class="section-block">
+                                                    <h3 class="block-title" id="requirements">Requirements</h3>
+                                                    <div class="code-block">
+                                                        <p>
+                                                            <ul>
+                                                                <li>Windows Operating System</li>
+                                                                <li>Have <a href="https://dev.mysql.com/downloads/installer/">MySQL</a>, <a href="https://www.postgresql.org/download/">PostgreSQL</a>, <a href="https://www.mongodb.com/try/download/community">MongoDB</a>, <a href="https://www.couchbase.com/downloads/?family=couchbase-server">Couchbase</a> installed in your system.</li>
+                                                                <li>It is recommended to download couchbase-server of version 7.0.2</li>
+                                                            </ul>
+                                                        </p>
                                         
-                                        <p>STEP1: Clone or download this github repository:</p>
-                                        <p><code>git clone https://github.com/rishalab/RJoules.git</code></p>
-                                        <br>
-<!--                                         <h5 id="running-backend">Running the RJoules backend</h5> -->
-                                        <p>STEP2: Navigate into the RJoules_main directory, copy the path of energy_measurement.R</p>
-                                        <p><code>cd RJoules/RJoules_main</code></p>
-                                        <p><code>pwd</code></p>
-					                    <p>For testing we have provided few test files here<a href=""></a>. Take any of the test file and update the PATH following STEP3 and run the below commands</p>
-                                        <code>cd RJoules/Test_files</code>
-                                        <code>R&lt;TESTFILENAME.R</code>
-                                        <p>STEP3: If you want to measure energy in your R script. Create a R script example. R and Import/source RJoules</p>
-                                        <p><code>source("PATH/energy_measurement.R")</code></p>
-<!--                                         <p style="color: red;">
-                                            <u>Note</u>: The <a href="https://pypi.org/project/sentence-transformers/">sentence-transformers</a>
-                                            may not get installed on some architectures of Mac systems. In such cases, kindly install the package
-                                            manually with conda (requires conda environment installed) using the following command.
-                                        </p> -->
-                                        <!-- <br> -->
-					                    <p>STEP4: Write the code for which energy measurements need to be done inside a function block as below example in example.R.</p>
-                                        <p><code>test_foo<-function(){<br>
-  
-  						                print("This is my foo function..")<br>
-  						                df <- data.frame("Age" = c(12, 21, 15, 5, 25), "Name" = c("Johnny", "Glen", "Alfie","Jack", "Finch"))<br>
-						                newdf <- df[order(df$Age), ]<br>
-					                    print(newdf)<br>
-							            }
-					                    </code></p>
-                                        <p>STEP5: Call measure_energy function defined in RJoules with test function name as parameter</p>
-                                        <p><code>measure_energy(test_foo)()</code></p>
-					                    <p>STEP6: Run example.R in console to get Energy measurements</p>
-                                        <p><code>R&lt;example.R --no-save></code></p>
-                                            <p>STEP7: Check the output in output.csv file</p>
-                                            <p><code>vi output.csv</code></p>
-                                        <br>
-<!--                                         <h5 id="loading-extension">Loading the Chrome extension</h5>
-                                        <p>Select the extensions option in control and customize menu in the Chrome browser</p>
-                                        <p><code>Customize and Control > More Tools > Extensions</code></p>
-                                        <img class="extensions" src="assets/images/demo/extensions_menu.png" alt="extensions menu">
-                                        <br>
-                                        <p>Enable the develper mode, click on load unpacked and select the <b>extension</b> folder</p>
-                                        <img class="extensions" src="assets/images/demo/load_unpacked.png" alt="load unpacked">
-                                        <p>Once the extension is loaded, enable it and allow it to work in incognito:</p>
-                                        <code>Details > Allow in incognito</code> -->
-                                        <!-- <br>
-                                        <img class="extensions" src="assets/images/demo/code.png" alt="plugin"> -->
-                                        <!-- <img class="extensions" src="assets/images/demo/allow_incognito.png" alt="plugin"> -->
+                                                    </div>
+                                                    <h3 class="block-title" id="from-github">From Github</h3>
+                                                    <div class="code-block">
+                                                        
+                                                        <p>STEP1: Clone or download this github repository:</p>
+                                                        <p><code>git clone https://github.com/rishalab/DBJoules.git</code></p>
+                                                        <br>
+                                                        <p>STEP2: Navigate to the directory </p>
+                                                        <p><code>cd DBJoules</code></p>
+                                                        <p>STEP3: Run "setup.py" file to install necessary dependencies</p>
+                                                        <p><code>python setup.py</code></p>
+                                                        <p>STEP4: Run "stop_background_processes.py" file to stop all the currently running background processes.</p>
+                                                        <p><code>python stop_background_processes.py</code></p>
+                                                        <p>STEP5: Start the tool</p>
+                                                        <p><code>python main_app.py</code></p>
+                                                        <br>
+                                                        
+                                                    </div><!--//code-block-->
+                                                    <h3 class="block-title" id="usage">Usage</h3>
+                                                    <div class="code-block">
+                                                        <p>Comparing energy consumption of query execution among MySQL, PostgreSQL, MongoDB and Couchbase databases.</p>
+                                                        <!-- <p>Ex: <a href="https://github.com/iNPUTmice/Conversations">iNPUTmice/Conversations</a></p> -->
+                                                    
+                                                        <!-- <img src="assets/images/demo/isssues_tab.png" alt="issues tab"> -->
+                                                    </div>
+                                                </div><!--//section-block-->
+                                            </section><!--//doc-section-->
+                                            <section id="icons-section" class="doc-section">
+                                                <h2 class="section-title">Approach diagram</h2>
+                                                <div class="section-block">
+                                                    <!-- <ul> -->
+                                                        <!-- <li> -->
+                                                            <!-- <strong>Generation of Labels</strong> -->
+                                                            <p>
+                                                                DBJoules uses psutil package to measure energy consumption. The tool is developed to compare energy consumed by CPU and RAM for query execuation. The internal workflow is described in the below figure.
+                                                            </p>
+                                                            <img class="img-fluid" src="assets/images/demo/DBJoules_Workflow.png" alt="elegant icons" />
+                                                            <br>
+                                                        <!-- </li> -->
+                                                        <div style="height: 20px;"></div>
+                                                    <!-- </ul> -->
 
-                                        <!-- <p><strong>Be sure to have CORS disabled on your browser.</strong></p> -->
-                                        <!-- <p>Load the extension directory in the Chrome browser in developer mode. 
-                                            <a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/">Instructions for loading</a></p> -->
-                                        
-                                    </div><!--//code-block-->
-                                    <h3 class="block-title" id="usage">Usage</h3>
-                                    <div class="code-block">
-                                        <p>Measuring energy consumption due to R code snippets.</p>
-                                        <!-- <p>Ex: <a href="https://github.com/iNPUTmice/Conversations">iNPUTmice/Conversations</a></p> -->
-                                       
-                                        <!-- <img src="assets/images/demo/isssues_tab.png" alt="issues tab"> -->
-                                    </div>
-                                </div><!--//section-block-->
-                            </section><!--//doc-section-->
-                            <section id="icons-section" class="doc-section">
-                                <h2 class="section-title">Approach diagram</h2>
-                                <div class="section-block">
-                                    <!-- <ul> -->
-                                        <!-- <li> -->
-                                            <!-- <strong>Generation of Labels</strong> -->
-                                            <p>
-                                                RJoules uses intel-RAPL interface to measure energy consumption. The tool is developed for getting package and dram domain energy consumption due to R code snippet. The internal workflow is described in the below figure.
-                                            </p>
-                                            <img class="img-fluid" src="assets/images/demo/approach_diagram.png" alt="elegant icons" />
-                                            <br>
-                                        <!-- </li> -->
-                                        <div style="height: 20px;"></div>
-                                        <li>
-                                            <!-- <strong>Working of Extension</strong>
-                                            <p>
-                                                The approach of labeling described in the previous step is deployed on a local server using the Flask web framework. 
-                                                The extension monitors the browser forload of GitHub issues page. 
-                                                Once loaded, the text data from each of the issues is extracted and sent as an input to 
-                                                the flask backend server. The server labels the issues using the labeling approach 
-                                                and returns the list of labels for the given issue. 
-                                                This list is used to generate the tag element for each of the labels. 
-                                                These tags areappended to the issues in the webpage
-                                            </p>
-                                            <img class="img-fluid" src="assets/images/demo/eTagger_extension.png" alt="elegant icons" />
-                                            <br>
-                                        </li> -->
-                                    <!-- </ul> -->
+                                                
+                                            </section>
+                                            <section id="metric-section" class="doc-section">
+                                                <h2 class="section-title">Packages used in DBJoules</sup></h2>
+                                                <div class="section-block">
+                                                
+                                                    <ul>
+                                                        <li>
+                                                            <strong>mysql-connector-python</strong>: This module facilitates Python
+                                                            programs in accessing and manipulating MySQL databases
+                                                            through API calls.
 
-                                
-                            </section>
+                                                        </li>
+                                                        <li>
+                                                            <strong>psycopg2</strong>: Psycopg is the most popular PostgreSQL database adapter for the Python. It offers complete implementation of the Python DB API 2.0 specification10 and ensures thread safety.
+                                                        </li>
+                                                        <li><strong>pymongo</strong>: This package serves as a native Python driver
+                                                            for MongoDB, providing tools for seamless interaction with
+                                                            MongoDB databases from Python.</li>
+                                                        <li><strong>couchbase</strong>: This module allows Python applications to
+                                                            access a Couchbase cluster efficiently. </li>
+                                                        <li><strong>psutil.cpu_percent()</strong>: This function gathers CPU utilization percentage for calculating energy consumed by CPU.</li>
+                                                        <li><strong>psutil.virtual_memory()</strong>: This function provides the allocated memory for calculating energy consumed by RAM.</li>
+
+                                                    </ul>
+                                                </div>
+                                                
+                                            </section>
+
+                                            <section id="uses-section" class="doc-section">
+                                                <h2 class="section-title">Goal</h2>
+                                                <div class="section-block">
+                                                    
+                                                            Helping developers and practitioners to choose energy efficient database.
+                                                
+                                                </div>
+                                                
+                                            </section>
 
 
-
-                            <section id="feature-section" class="doc-section">
-                                <h2 class="section-title">Code snippet creenshot</h2>
-                                <div class="section-block">
-
-                                    <ul style="list-style: none;">
-                                        <li>
-                                            <br>
-                                            <img class="img-fluid" src="assets/images/demo/Test_code.png" alt="screenshot" />
-                                            <br><br>
-                                        </li>
-                                        <!-- <li>
-                                            <br>
-                                            <img class="img-fluid" src="assets/images/demo/Screenshot_2.png" alt="elegant icons" />
-                                            <br><br>
-                                        </li>
-                                        <li>
-                                            <br>
-                                            <img class="img-fluid" src="assets/images/demo/Screenshot_3.png" alt="elegant icons" />
-                                            <br><br>
-                                        </li>
-                                        <li>
-                                            <br>
-                                            <img class="img-fluid" src="assets/images/demo/Screenshot_4.png" alt="elegant icons" />
-                                            <br><br>
-                                        </li> -->
-                                    </ul>
-                                </div>
-                                
-                            </section>
-
-                            <section id="uses-section" class="doc-section">
-                                <h2 class="section-title">Goal</h2>
-                                <div class="section-block">
-                                    
-                                            Helping developers and practitioners to develope energy efficient code in R language.
-                                  
-                                </div>
-                                
-                            </section>
-
-
-                            <!-- <section id="metric-section" class="doc-section">
-                                <h2 class="section-title">Metrics used in AC<sup>2</sup></h2>
-                                <div class="section-block">
-                                    
-                                    <strong>Cohesion using LCOM4</strong>: It measures the degree to which componentsare functionally related. The values are stored in seperate files for each version.
-                                    <br><br>
-                                    <strong>A2A (Architecture-to-architecture)</strong>: It gives the similarity measure of the component-level changes between thearchitectures between two releases.
-                                    We modified the original A2A metric in the context of AC2 tool to get the following metrics:
-                                    <br><br>
-                                    <ul>
-                                        <li>
-                                            <strong>Architectural Similarity</strong>: It is calculated using directory viewwhere directory is considered as a component and files as its entities.
-
-                                        </li>
-                                        <li>
-                                            <strong>Functional Similarity</strong>: We use call graphs to calculate the funcitonal similarity in which function calls and definitions are considered as entities.
-                                        </li>
-                                        <li><strong>Class Similarity</strong>: For this metric, we use collaboration graphs, the class definitions are considered as the entities.</li>
-                                        <li><strong>Module Similarity</strong>: Similarily we use modules as entities for this metric. </li>
-
-                                    </ul>
-                                </div>
-                                
-                            </section>-->
-				
-			<section id="result-section" class="doc-section">
-                                <h2 class="section-title">Results</h2>
-                                <div class="section-block">
-                                    The evaluation experiments have been done on 3 systems of different configurations considering 4 machine learning algorithms. 
-                                    <strong><a href="https://github.com/Rajrupa1998/RJoules/tree/main/Evaluation/">Results</a></strong>
-                                    
-                                    
-                                </div>
-                                
-                            </section>
-                            
-                            
-                             
-                            
-                            
-                
-                            
-                            
-                            
-                            <section id="video-section" class="doc-section">
-                                <h2 class="section-title">Demo Video</h2>
-                                <div class="section-block">
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
                                             
-                                            <div class="embed-responsive embed-responsive-4by3">
-                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/yMKFuvAM-DE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                <!-- <iframe width="729" height="410" src="https://www.youtube.com/embed/W6yiaXK2rEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                                                <!-- <iframe width="729" height="410" src="https://www.youtube.com/embed/eLcOIPiGt_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                                                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/GNrJfZ0RCVI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                                            </div>
-						<div>The output file name has been updated as RJoules_output.csv</div>
+                                
+                                            <section id="result-section" class="doc-section">
+                                                <h2 class="section-title">Results</h2>
+                                                <div class="section-block">
+                                                    The evaluation experiments have been done on 2 systems of different configurations considering 2 different datasets.
+                                                    <li><a href="https://www.kaggle.com/datasets/arnavsmayan/netflix-userbase-dataset">Netflix Userbase dataset</a></li>
+                                                    <li><a href="https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset">SMS Spam dataset</a></li>
+
+                                                    
+                                                </div>
+                                                
+                                            </section>
+                                            
+                                            <section id="video-section" class="doc-section">
+                                                <h2 class="section-title">Demo Video</h2>
+                                                <div class="section-block">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-12">
+                                                            
+                                                            <div class="embed-responsive embed-responsive-4by3">
+                                                                <iframe width="560" height="315" src="https://www.youtube.com/embed/yMKFuvAM-DE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                <!-- <iframe width="729" height="410" src="https://www.youtube.com/embed/W6yiaXK2rEM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                                                <!-- <iframe width="729" height="410" src="https://www.youtube.com/embed/eLcOIPiGt_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                                                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/GNrJfZ0RCVI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                                            </div>
+                                                            <div>The output file name has been updated as RJoules_output.csv</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div><!--//content-inner-->
+                                    </div><!--//doc-content-->
+                                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                                        <div id="doc-nav" class="doc-nav">
+                                            
+                                                <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+                                                    <!-- <a class="nav-link scrollto" href="#download-section">Download</a> -->
+                                                    <a class="nav-link scrollto" href="#installation-section">Installation</a>
+                                                    <nav class="doc-sub-menu nav flex-column">
+                                                        <a class="nav-link scrollto" href="#requirements">Requirements</a>
+                                                        <a class="nav-link scrollto" href="#from-github">From Github</a>
+                                                        <a class="nav-link scrollto" href="#usage">Usage</a>
+                                                    </nav><!--//nav-->
+                                                    <a class="nav-link scrollto" href="#icons-section">Approach</a>
+                                                    <a class="nav-link scrollto" href="#metric-section">Packages</a>
+                                                    <a class="nav-link scrollto" href="#uses-section">Goals</a>
+                                                    
+                                                    <a class="nav-link scrollto" href="#result-section">Results</a>
+                                                    <!-- <nav class="doc-sub-menu nav flex-column">
+                                                        <a class="nav-link scrollto" href="#html">Parsing class</a>
+                                                    </nav>//nav -->
+                                                    <!-- <a class="nav-link scrollto" href="#tables-section">Results</a> -->
+                                                    <a class="nav-link scrollto" href="#video-section">Demo Video</a>
+                                                </nav><!--//doc-menu-->
+                                            
                                         </div>
-                                    </div>
-                                </div>
-                            
-                            
-                            </section>
-                        </div><!--//content-inner-->
-                    </div><!--//doc-content-->
-                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
-                        <div id="doc-nav" class="doc-nav">
-	                        
-	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-	                                <!-- <a class="nav-link scrollto" href="#download-section">Download</a> -->
-	                                <a class="nav-link scrollto" href="#installation-section">Installation</a>
-                                    <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#requirements">Requirements</a>
-                                        <a class="nav-link scrollto" href="#from-github">From Github</a>
-                                        <a class="nav-link scrollto" href="#running-backend">Running the backend</a>
-                                        <a class="nav-link scrollto" href="#loading-extension">Loading the Chrome extension</a>
-                                        <a class="nav-link scrollto" href="#usage">Usage</a>
-                                    </nav><!--//nav-->
-                                    <a class="nav-link scrollto" href="#icons-section">Approach</a>
-                                    <a class="nav-link scrollto" href="#feature-section">Screenshots</a>
-                                    <a class="nav-link scrollto" href="#uses-section">Goals</a>
-                                    <!-- <a class="nav-link scrollto" href="#metric-section">Metrics</a> -->
-					<a class="nav-link scrollto" href="#result-section">Results</a>
-                                    <!-- <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#html">Parsing class</a>
-                                    </nav>//nav -->
-	                                <!-- <a class="nav-link scrollto" href="#tables-section">Results</a> -->
-	                                <a class="nav-link scrollto" href="#video-section">Demo Video</a>
-	                            </nav><!--//doc-menu-->
-	                        
-                        </div>
-                    </div><!--//doc-sidebar-->
-                </div><!--//doc-body-->              
-            </div><!--//container-->
-        </div><!--//doc-wrapper-->
+                                    </div><!--//doc-sidebar-->
+                                </div><!--//doc-body-->              
+                            </div><!--//container-->
+                        </div><!--//doc-wrapper-->
         
         <div id="promo-block" class="promo-block">
             <div class="container">
@@ -342,7 +239,7 @@
                         <div class="content-holder-inner">
                             <div class="desc">
                                 <h3 class="promo-title">Contributors</h3>
-                                <p> Rajrupa chattaraj, Sridhar Chimalakonda</p>
+                                <p> Hemasri Sai Lella, Kurra Manasa, Rajrupa chattaraj, Sridhar Chimalakonda</p>
                                 <!-- <a class="btn btn-cta" href="" target="_blank"><i class="fas fa-external-link-alt"></i> Preprint</a> -->
                             </div><!--//desc-->
                         </div><!--//content-holder-inner-->
