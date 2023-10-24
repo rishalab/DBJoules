@@ -29,4 +29,6 @@ DBJoules measures the energy consumption of queries written in various databases
 1. [Demonstration Video](https://www.youtube.com/watch?v=hP4pWJ4AKxE)
 2. [Tool Website](https://rishalab.github.io/DBJoules/)
 
+
 # Tool Demo:
+![DBJoules_Output](https://github.com/rishalab/DBJoules/assets/91315524/c5149281-1e89-4ec5-a0a3-0e69bbe9d63a)
