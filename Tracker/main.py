@@ -68,8 +68,8 @@ class Tracker:
         file_name=None,
         measure_period=10,
         emission_level=None,
-        alpha_2_code=None,
-        region=None,
+        # alpha_2_code=None,
+        # region=None,
         cpu_processes="current",
         pue=1,
         ignore_warnings=False,
@@ -95,8 +95,8 @@ class Tracker:
         self.get_set_params(self.project_name, self.file_name,
                             self._measure_period, self._pue)
 
-        self._emission_level, self._country = define_carbon_index(
-            emission_level, alpha_2_code, region)
+        # self._emission_level, self._country = define_carbon_index(
+        #     emission_level, alpha_2_code, region)
         self._cpu_processes = cpu_processes
         self._start_time = None
         self._cpu = None
@@ -157,8 +157,8 @@ class Tracker:
         return self._id
 
     #   emission_level is the mass of CO2 in kilos, which is produced  per every MWh of consumed energy.
-    def emission_level(self):
-        return self._emission_level
+    # def emission_level(self):
+    #     return self._emission_level
 
     #   Period of power consumption measurements.
     def measure_period(self):
@@ -191,11 +191,11 @@ class Tracker:
         attributes_dict["ram_power_consumption(kWh)"] = [
             f"{self._ram_consumption}"]
         attributes_dict["power_consumption(kWh)"] = [f"{self._consumption}"]
-        attributes_dict["CO2_emissions(kg)"] = [
-            f"{self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH}"]
+        # attributes_dict["CO2_emissions(kg)"] = [
+        #     f"{self._consumption * self._emission_level / FROM_kWATTH_TO_MWATTH}"]
         attributes_dict["CPU_name"] = [f"{self._cpu.name()}"]
         attributes_dict["OS"] = [f"{self._os}"]
-        attributes_dict["region/country"] = [f"{self._country}"]
+        # attributes_dict["region/country"] = [f"{self._country}"]
 
         return attributes_dict
 

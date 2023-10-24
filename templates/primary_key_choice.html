@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBJoules</title>
+    <link rel="stylesheet" href="../static/choice.css">
+</head>
+
+<body>
+    <div class="home-container">
+        <header class="home-header">
+            <h1>DBJoules</h1>
+        </header>
+        <div class="home-card">
+            <div class="home-box">
+                <form action="{{ url_for('is_prim_key') }}">
+                    <input class="home-btn" type="submit" value="Select a Primary Key">
+                </form>
+                <form action="{{ url_for('no_prim_key') }}">
+                    <input class="home-btn"  type="submit" value="No Primary Key">
+                </form>
+            </div>
+        </div>
+        <button class="home-btn" onclick="window.location.href='{{ url_for('index')}}'">Go back</button>
+    </div>
+</body>
+
+</html>

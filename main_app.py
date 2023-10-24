@@ -139,15 +139,26 @@ def table_creation():
         return render_template('upload.html')
 
 
-@app.route('/primary_key', methods=['POST'])
+@app.route('/primary_key_choice', methods=['POST'])
 def submit_columns():
     column_names = session.get('column_names', None)
     column_types = [request.form.get(item) for item in column_names]
     session['column_types'] = column_types
+    return render_template('primary_key_choice.html')
+
+
+@app.route('/is_prim_key', methods=['GET', 'POST'])
+def is_prim_key():
+    column_names = session.get('column_names', None)
     return render_template('primary_key.html', items=column_names)
 
 
-@app.route('/database_choice_details', methods=['POST'])
+@app.route('/no_prim_key', methods=['GET', 'POST'])
+def no_prim_key():
+    return render_template('database_choice.html')
+
+
+@app.route('/database_choice_details', methods=['GET', 'POST'])
 def prim_key():
     column_names = session.get('column_names', None)
     primary_key = request.form.get('primary_key')
@@ -156,7 +167,7 @@ def prim_key():
     return render_template('database_choice.html')
 
 
-@app.route('/database_choice_create_table', methods=['POST'])
+@app.route('/database_choice_create_table', methods=['GET', 'POST'])
 def database_choice_details():
     databases = request.form.getlist('databases')
     session['databases'] = databases
@@ -240,6 +251,11 @@ def database_choice_queries():
     sorted_data = {k: v for k, v in sorted(
         query_results.items(), key=lambda item: float(item[1][2]))}
     return render_template('result.html', data=query_results, sorted_data=sorted_data)
+
+
+# @app.route('/primary-key-choice')
+# def primary_key_choice():
+#     return render_template('primary_key_choice.html')
 
 
 @app.route('/choice')
@@ -525,7 +541,7 @@ def create_couchbase_collection(user, password):
         collection = bucket.default_collection()
 
         path = 'uploads/' + filename
-
+        # print('about to')
         with open(path, 'r') as csv_file:
             # print(path)
             data = csv.reader(csv_file)
@@ -550,7 +566,8 @@ def create_couchbase_collection(user, password):
                 # Assuming primary_key is the ID field
                 unique_key = generate_unique_key()
                 collection.upsert(unique_key, doc)
-        time.sleep(2)
+                # print('created')
+        # time.sleep(2)
 
         query = 'CREATE PRIMARY INDEX ON '
         query += bucket_name
@@ -600,28 +617,75 @@ def generate_csv():
     for key in database_keys:
         outputs[key] = []
     count = 0
-    for combo in combinations:
-        for key, action in zip(database_keys, combo):
-            if key in action_functions:
-                if key != 'MongoDB':
-                    action_function = action_functions[key]
+    for key in database_keys:
+        if key == 'MySQL':
+            for i in range(len(mysql_queries)):
+                query = mysql_queries[i]
+                for j in range(10):
                     l = []
-                    l.append(action)
-                    x = action_function(
-                        action, database_info[key]['user'], database_info[key]['password'], database_info[key]['name'])
+                    l.append(query)
+                    x = execute_mysql_query(
+                        query, database_info[key]['user'], database_info[key]['password'], database_info[key]['name'])
                     l.extend(x)
                     outputs[key].append(l)
                     time.sleep(1)
-                elif key == 'MongoDB':
-                    action_function = action_functions[key]
+        elif key == 'PostgreSQL':
+            for i in range(len(postgresql_queries)):
+                query = postgresql_queries[i]
+                for j in range(10):
                     l = []
-                    l.append(action)
-                    x = action_function(
-                        action, database_info[key]['name'])
+                    l.append(query)
+                    x = execute_postgreSQL_query(
+                        query, database_info[key]['user'], database_info[key]['password'], database_info[key]['name'])
                     l.extend(x)
                     outputs[key].append(l)
                     time.sleep(1)
-        count = count+1
+        elif key == 'MongoDB':
+            for i in range(len(mongodb_queries)):
+                query = mongodb_queries[i]
+                for j in range(10):
+                    l = []
+                    l.append(query)
+                    x = execute_mongodb_query(
+                        query, database_info[key]['name'])
+                    l.extend(x)
+                    outputs[key].append(l)
+                    time.sleep(1)
+        elif key == 'Couchbase':
+            for i in range(len(couchbase_queries)):
+                query = couchbase_queries[i]
+                for j in range(10):
+                    l = []
+
+                    l.append(query)
+                    x = execute_couchbase_query(
+                        query, database_info[key]['user'], database_info[key]['password'], database_info[key]['name'])
+                    l.extend(x)
+                    outputs[key].append(l)
+                    time.sleep(1)
+
+    # for combo in combinations:
+    #     for key, action in zip(database_keys, combo):
+    #         if key in action_functions:
+    #             if key != 'MongoDB':
+    #                 action_function = action_functions[key]
+    #                 l = []
+    #                 l.append(action)
+    #                 x = action_function(
+    #                     action, database_info[key]['user'], database_info[key]['password'], database_info[key]['name'])
+    #                 l.extend(x)
+    #                 outputs[key].append(l)
+    #                 time.sleep(1)
+    #             elif key == 'MongoDB':
+    #                 action_function = action_functions[key]
+    #                 l = []
+    #                 l.append(action)
+    #                 x = action_function(
+    #                     action, database_info[key]['name'])
+    #                 l.extend(x)
+    #                 outputs[key].append(l)
+    #                 time.sleep(1)
+    #     count = count+1
     csv_data = []
     csv_data.append(fieldNames)
     headers = list(outputs.keys())
@@ -636,7 +700,7 @@ def generate_csv():
         csv_writer = csv.writer(csv_file)
         csv_writer.writerows(csv_data)
     print('csv generated')
-    return outputs
+    return render_template('csv_output.html')
 
 
 @app.route('/enter_queries', methods=['POST', 'GET'])
